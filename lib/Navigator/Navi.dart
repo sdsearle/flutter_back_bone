@@ -1,3 +1,4 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_back_bone/res/Strings.dart';
 import 'package:injectable/injectable.dart';
@@ -7,23 +8,37 @@ import '../Widget/SecondWidget.dart';
 import '../injection.dart';
 import '../main.dart';
 
-@injectable
 @singleton
 class Navi{
-  final _navi = globalNav;
 
-  GlobalKey<NavigatorState> get navKey => _navi;
+  static final Navi _navi = Navi._internal();
 
-  BuildContext? get context => _navi.currentContext;
+  factory Navi(){
+    return _navi;
+  }
+
+  Navi._internal();
+
+  BuildContext get _currentContext => _contextStack.last;
+  List<BuildContext> _contextStack = <BuildContext>[];
 
   get initial => routes[0];
 
+  void setCurrentContext(BuildContext context){
+
+    Fimber.d("Navi Hash: $hashCode");
+    _contextStack.add(context);
+  }
+
   void back(){
-    Navigator.pop(context!);
+    Navigator.pop(_currentContext);
+    _contextStack.removeLast();
   }
 
   void goToSecondScreen() {
-    Navigator.pushNamed(context!, '/second');
+    Fimber.d("Navi Hash: $hashCode");
+    Fimber.d("Current state: ${_currentContext.widget}");
+    Navigator.pushNamed(_currentContext, '/second');
   }
 
   Map<String, Widget Function(BuildContext)> routes = {

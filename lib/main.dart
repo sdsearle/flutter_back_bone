@@ -1,20 +1,15 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_back_bone/res/ThemeManager.dart';
 import 'package:flutter_back_bone/res/Themes.dart';
 
 import 'Navigator/Navi.dart';
 import 'injection.dart';
-
-final globalNav = GlobalKey<NavigatorState>();
 
 void main() {
   configureDependencies();
   Fimber.plantTree(DebugTree());
   runApp(MyApp());
 }
-
-ThemeManager _themeManager = ThemeManager();
 
 class MyApp extends StatelessWidget {
   final Navi _navi = getIt<Navi>();
@@ -27,9 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
-      //darkTheme: darkTheme,
-      //themeMode: _themeManager.themeMode,
-      navigatorKey: globalNav,//_navi.navKey,
+      darkTheme: darkTheme,
       initialRoute: _navi.initial,
       routes: _navi.routes,
       themeMode: ThemeMode.system,
