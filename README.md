@@ -15,10 +15,10 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-A Flutter Architecture that uses the following: 
-Widget - The Screen 
-State - View Model 
-Scaffold - View 
-Interactor 
-Repo 
+A Flutter Architecture that uses the following:
+Widget - The Screen,
+State - View Model,
+Scaffold - View,
+Interactor,
+Repo,
 Navi - A Navigation Class to house all navigation methods and routes
