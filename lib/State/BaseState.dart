@@ -1,3 +1,7 @@
+/**
+ * Created by sdsearle on 8/20/2023.
+ */
+
 import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -31,9 +35,12 @@ class BaseState<T> extends State<BaseWidget> {
     return Container();
   }
 
-  void refresh() {
+  //TODO: Update this to Variadic function once Dart allows for this
+  void updater(Function function) {
+    // Log the updater lifecycle step.
+    Fimber.d("updating");
     if(mounted == true) {
-      setState(() {});
+      setState(() {function.call();});
     }
   }
 }

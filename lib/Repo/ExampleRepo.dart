@@ -1,3 +1,7 @@
+/**
+ * Created by sdsearle on 8/20/2023.
+ */
+
 import 'package:fimber/fimber.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,7 +17,6 @@ class ExampleRepo {
   int counter = 0;
 
   Future<void> incrementCounter() async {
-    Fimber.d("counter updated");
     counter++;
     Fimber.d("$counter");
   }

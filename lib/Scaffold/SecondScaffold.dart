@@ -1,3 +1,7 @@
+/**
+ * Created by sdsearle on 8/20/2023.
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_back_bone/Interactor/SecondInteractor.dart';
 import 'package:flutter_back_bone/Scaffold/BaseScaffold.dart';
@@ -5,7 +9,7 @@ import 'package:flutter_back_bone/injection.dart';
 
 class SecondScaffold extends BaseScaffold {
   //const ExampleScaffold({super.key, required this.theme, required this.exampleInteractor});
-  SecondScaffold({super.key, required this.theme, required super.refresh});
+  SecondScaffold({super.key, required this.theme, required super.updater});
 
   final ThemeData theme;
   final SecondInteractor interactor =  getIt<SecondInteractor>();

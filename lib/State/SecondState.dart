@@ -1,3 +1,7 @@
+/**
+ * Created by sdsearle on 8/20/2023.
+ */
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +14,5 @@ class SecondState extends BaseState<SecondWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return SecondScaffold(theme: Theme.of(context), refresh: refresh);
+    return SecondScaffold(theme: Theme.of(context), updater: updater);
   }}

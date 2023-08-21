@@ -1,3 +1,7 @@
+/**
+ * Created by sdsearle on 8/20/2023.
+ */
+
 import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_back_bone/res/Strings.dart';
@@ -20,7 +24,7 @@ class Navi{
   Navi._internal();
 
   BuildContext get _currentContext => _contextStack.last;
-  List<BuildContext> _contextStack = <BuildContext>[];
+  final List<BuildContext> _contextStack = <BuildContext>[];
 
   get initial => routes[0];
 
