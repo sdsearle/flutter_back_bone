@@ -26,6 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    // TODO: Specify your own unique namespace
     namespace "com.zol.flutter_back_bone"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
