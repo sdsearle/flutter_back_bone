@@ -12,10 +12,12 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'Interactor/ExampleInteractor.dart' as _i3;
-import 'Interactor/SecondInteractor.dart' as _i6;
-import 'Navigator/Navi.dart' as _i5;
-import 'Repo/ExampleRepo.dart' as _i4;
+import 'Custom%20Widgets/ExampleCustomWidget/ExampleCustomInteractor.dart'
+    as _i3;
+import 'Interactor/ExampleInteractor.dart' as _i4;
+import 'Interactor/SecondInteractor.dart' as _i7;
+import 'Navigator/Navi.dart' as _i6;
+import 'Repo/ExampleRepo.dart' as _i5;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -28,10 +30,12 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.ExampleInteractor>(() => _i3.ExampleInteractor());
-    gh.factory<_i4.ExampleRepo>(() => _i4.ExampleRepo());
-    gh.factory<_i5.Navi>(() => _i5.Navi());
-    gh.factory<_i6.SecondInteractor>(() => _i6.SecondInteractor());
+    gh.factory<_i3.ExampleCustomInteractor>(
+        () => _i3.ExampleCustomInteractor());
+    gh.factory<_i4.ExampleInteractor>(() => _i4.ExampleInteractor());
+    gh.factory<_i5.ExampleRepo>(() => _i5.ExampleRepo());
+    gh.singleton<_i6.Navi>(_i6.Navi());
+    gh.factory<_i7.SecondInteractor>(() => _i7.SecondInteractor());
     return this;
   }
 }

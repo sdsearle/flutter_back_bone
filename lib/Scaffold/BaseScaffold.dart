@@ -5,7 +5,8 @@
 import 'package:flutter/material.dart';
 
 class BaseScaffold extends Scaffold {
-  const BaseScaffold({super.key, required this.updater});
+  const BaseScaffold({super.key, required this.updater, required this.context});
 
   final Function updater;
+  final BuildContext context;
 }

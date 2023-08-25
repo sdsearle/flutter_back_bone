@@ -2,6 +2,7 @@
  * Created by sdsearle on 8/20/2023.
  */
 
+import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_back_bone/Interactor/SecondInteractor.dart';
 import 'package:flutter_back_bone/Scaffold/BaseScaffold.dart';
@@ -9,10 +10,11 @@ import 'package:flutter_back_bone/injection.dart';
 
 class SecondScaffold extends BaseScaffold {
   //const ExampleScaffold({super.key, required this.theme, required this.exampleInteractor});
-  SecondScaffold({super.key, required this.theme, required super.updater});
+  SecondScaffold({super.key, required this.theme, required super.context, required super.updater, required this.interactor});
 
   final ThemeData theme;
-  final SecondInteractor interactor =  getIt<SecondInteractor>();
+
+  SecondInteractor interactor;
 
   int get counter => 0;
 
@@ -26,13 +28,27 @@ class SecondScaffold extends BaseScaffold {
   );
 
   @override
-  Widget? get body => const Center(
+  Widget? get body => Center(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'This is the second screen',
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: interactor.getViews().length,
+            itemBuilder: (context, index) => interactor.getViews()[index],
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            updater(
+                  () => {
+                interactor.addViews(),
+              },
+            );
+          },
+          child: const Text('Add String'),
         )
+
       ],
     ),
   );

@@ -8,10 +8,10 @@ import 'package:flutter_back_bone/Scaffold/BaseScaffold.dart';
 import 'package:flutter_back_bone/injection.dart';
 
 class ExampleScaffold extends BaseScaffold {
-  ExampleScaffold({super.key, required this.theme, required super.updater});
+  const ExampleScaffold({super.key, required this.theme, required super.updater, required super.context, required this.interactor});
 
   final ThemeData theme;
-  final ExampleInteractor exampleInteractor =  getIt<ExampleInteractor>();
+  final ExampleInteractor interactor;
 
   int get counter => 0;
 
@@ -29,10 +29,10 @@ class ExampleScaffold extends BaseScaffold {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${exampleInteractor.getCounter()}',
+              '${interactor.getCounter()}',
               style: theme.textTheme.headlineMedium,
             ),
-            TextButton(onPressed: () => exampleInteractor.goToSecondScreen(), child: const Text("Next Screen"))
+            TextButton(onPressed: () => interactor.goToSecondScreen(), child: const Text("Next Screen"))
           ],
         ),
       );
@@ -45,6 +45,6 @@ class ExampleScaffold extends BaseScaffold {
       );
 
   incrementCounter() {
-    updater( () => exampleInteractor.incrementCounter());
+    updater( () => interactor.incrementCounter());
   }
 }

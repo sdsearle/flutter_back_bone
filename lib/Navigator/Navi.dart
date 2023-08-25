@@ -37,6 +37,7 @@ class Navi{
   void back(){
     Navigator.pop(_currentContext);
     _contextStack.removeLast();
+    Fimber.d("Current state: ${_currentContext.widget}");
   }
 
   void goToSecondScreen() {

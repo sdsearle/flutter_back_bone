@@ -3,6 +3,7 @@
  */
 
 import 'package:fimber/fimber.dart';
+import 'package:flutter_back_bone/Custom%20Widgets/ExampleCustomWidget/ExampleCustomWidget.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
@@ -14,6 +15,9 @@ class ExampleRepo {
     return _exampleRepo;
   }
 
+
+  final List<ExampleCustomWidget> _widgets = [];
+
   int counter = 0;
 
   Future<void> incrementCounter() async {
@@ -21,7 +25,17 @@ class ExampleRepo {
     Fimber.d("$counter");
   }
 
+  void addView(){
+    _widgets.add(
+      const ExampleCustomWidget()
+    );
+  }
+
   getCounter() { return counter;}
 
   ExampleRepo._internal();
+
+  getViews() {
+    return _widgets;
+  }
 }
