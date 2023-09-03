@@ -7,8 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_back_bone/res/Strings.dart';
 import 'package:injectable/injectable.dart';
 
-import '../Widget/ExampleWidget.dart';
-import '../Widget/SecondWidget.dart';
+import '../Screens/Example/ExampleWidget.dart';
+import '../Screens/Second/SecondWidget.dart';
 import '../injection.dart';
 import '../main.dart';
 

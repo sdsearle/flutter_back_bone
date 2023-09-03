@@ -3,11 +3,11 @@
  */
 
 import 'package:flutter_back_bone/Navigator/Navi.dart';
-import 'package:flutter_back_bone/Repo/ExampleRepo.dart';
+import 'package:flutter_back_bone/Screens/Example/ExampleRepo.dart';
 import 'package:flutter_back_bone/injection.dart';
 import 'package:injectable/injectable.dart';
 
-import 'BaseInteractor.dart';
+import '../../BaseClasses/BaseInteractor.dart';
 
 @injectable
 class SecondInteractor extends BaseInteractor{

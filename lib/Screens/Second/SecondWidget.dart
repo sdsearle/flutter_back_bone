@@ -2,9 +2,9 @@
  * Created by sdsearle on 8/20/2023.
  */
 
-import 'package:flutter_back_bone/Widget/BaseWidget.dart';
-import '../State/BaseState.dart';
-import '../State/SecondState.dart';
+import 'package:flutter_back_bone/BaseClasses/BaseWidget.dart';
+import '../../BaseClasses/BaseState.dart';
+import 'SecondState.dart';
 
 class SecondWidget extends BaseWidget {
   const SecondWidget({super.key});

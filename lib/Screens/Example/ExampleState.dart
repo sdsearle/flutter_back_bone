@@ -4,13 +4,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_back_bone/Interactor/ExampleInteractor.dart';
+import 'package:flutter_back_bone/Screens/Example/ExampleInteractor.dart';
 import 'package:flutter_back_bone/injection.dart';
 
-import '../Interactor/BaseInteractor.dart';
-import '../Scaffold/ExampleScaffold.dart';
-import '../Widget/ExampleWidget.dart';
-import 'BaseState.dart';
+import '../../BaseClasses/BaseInteractor.dart';
+import 'ExampleScaffold.dart';
+import 'ExampleWidget.dart';
+import '../../BaseClasses/BaseState.dart';
 
 class ExampleState extends BaseState<ExampleWidget> {
   @override

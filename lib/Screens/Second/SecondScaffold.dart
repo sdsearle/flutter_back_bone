@@ -4,8 +4,8 @@
 
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_back_bone/Interactor/SecondInteractor.dart';
-import 'package:flutter_back_bone/Scaffold/BaseScaffold.dart';
+import 'package:flutter_back_bone/Screens/Second/SecondInteractor.dart';
+import 'package:flutter_back_bone/BaseClasses/BaseScaffold.dart';
 import 'package:flutter_back_bone/injection.dart';
 
 class SecondScaffold extends BaseScaffold {

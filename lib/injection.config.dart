@@ -14,10 +14,10 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import 'Custom%20Widgets/ExampleCustomWidget/ExampleCustomInteractor.dart'
     as _i3;
-import 'Interactor/ExampleInteractor.dart' as _i4;
-import 'Interactor/SecondInteractor.dart' as _i7;
 import 'Navigator/Navi.dart' as _i6;
-import 'Repo/ExampleRepo.dart' as _i5;
+import 'Screens/Example/ExampleInteractor.dart' as _i4;
+import 'Screens/Example/ExampleRepo.dart' as _i5;
+import 'Screens/Second/SecondInteractor.dart' as _i7;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt

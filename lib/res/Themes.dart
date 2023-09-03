@@ -5,9 +5,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
-const COLOR_PRIMARY = Colors.blue;
-const COLOR_ACCENT = Colors.amber;
 
+//Themes can be found from https://rydmike.com/flexcolorscheme/themesplayground-v7-2/#/
 ThemeData lightTheme = FlexThemeData.light(
   scheme: FlexScheme.aquaBlue,
   surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,

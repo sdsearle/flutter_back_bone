@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_back_bone/Custom%20Widgets/ExampleCustomWidget/ExampleCustomContainer.dart';
 import 'package:flutter_back_bone/Custom%20Widgets/ExampleCustomWidget/ExampleCustomInteractor.dart';
-import 'package:flutter_back_bone/Interactor/BaseInteractor.dart';
+import 'package:flutter_back_bone/BaseClasses/BaseInteractor.dart';
 
-import '../../State/BaseState.dart';
+import '../../BaseClasses/BaseState.dart';
 import '../../injection.dart';
 import 'ExampleCustomWidget.dart';
 

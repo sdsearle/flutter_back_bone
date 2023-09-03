@@ -2,9 +2,9 @@
  * Created by sdsearle on 8/20/2023.
  */
 
-import 'package:flutter_back_bone/Interactor/BaseInteractor.dart';
+import 'package:flutter_back_bone/BaseClasses/BaseInteractor.dart';
 import 'package:flutter_back_bone/Navigator/Navi.dart';
-import 'package:flutter_back_bone/Repo/ExampleRepo.dart';
+import 'package:flutter_back_bone/Screens/Example/ExampleRepo.dart';
 import 'package:flutter_back_bone/injection.dart';
 import 'package:injectable/injectable.dart';
 

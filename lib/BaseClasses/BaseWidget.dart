@@ -4,7 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-import '../State/BaseState.dart';
+import 'BaseState.dart';
 
 class BaseWidget extends StatefulWidget {
   const BaseWidget({super.key});

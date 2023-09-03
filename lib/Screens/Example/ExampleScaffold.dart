@@ -3,8 +3,8 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_back_bone/Interactor/ExampleInteractor.dart';
-import 'package:flutter_back_bone/Scaffold/BaseScaffold.dart';
+import 'package:flutter_back_bone/Screens/Example/ExampleInteractor.dart';
+import 'package:flutter_back_bone/BaseClasses/BaseScaffold.dart';
 import 'package:flutter_back_bone/injection.dart';
 
 class ExampleScaffold extends BaseScaffold {

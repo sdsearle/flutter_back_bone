@@ -1,7 +1,7 @@
 import 'package:flutter/src/material/theme_data.dart';
 
-import '../../State/BaseState.dart';
-import '../../Widget/BaseWidget.dart';
+import '../../BaseClasses/BaseState.dart';
+import '../../BaseClasses/BaseWidget.dart';
 import 'ExampleCustomState.dart';
 
 /**
