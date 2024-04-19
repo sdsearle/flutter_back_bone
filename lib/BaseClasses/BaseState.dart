@@ -33,6 +33,7 @@ class BaseState<T> extends State<BaseWidget> {
   @override
   Widget build(BuildContext context) {
     // Log the build lifecycle step.
+    _navi.setCurrentContext(context);
     Fimber.d("build");
     return Container();
   }

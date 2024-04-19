@@ -17,6 +17,7 @@ class SecondState extends BaseState<SecondWidget> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return SecondScaffold(
       theme: Theme.of(context),
       context: context,

@@ -29,26 +29,48 @@ class Navi{
   get initial => routes[0];
 
   void setCurrentContext(BuildContext context){
-
-    Fimber.d("Navi Hash: $hashCode");
-    _contextStack.add(context);
+    if(_contextStack.isEmpty || _currentContext != context) {
+      Fimber.d("Navi Hash: $hashCode");
+      _contextStack.add(context);
+    }
   }
 
-  void back(){
+  void popCurrent(BuildContext context) {
+    Fimber.d("popCurrent");
+    Fimber.d((_contextStack.isNotEmpty && _currentContext == context).toString());
+    if (_contextStack.isNotEmpty && _currentContext == context) {
+      Fimber.d("${_contextStack.length}");
+      _contextStack.remove(context);
+      Fimber.d("${_contextStack.length}");
+    }
+  }
+
+  void back() {
     Navigator.pop(_currentContext);
-    _contextStack.removeLast();
-    Fimber.d("Current state: ${_currentContext.widget}");
   }
 
   void goToSecondScreen() {
-    Fimber.d("Navi Hash: $hashCode");
     Fimber.d("Current state: ${_currentContext.widget}");
-    Navigator.pushNamed(_currentContext, '/second');
+    Fimber.d("Current type: ${_currentContext.widget.runtimeType}");
+    if(_currentContext.widget is SecondWidget){
+    }else{
+      var e = _contextStack.whereType<SecondWidget>();
+      if(e.isNotEmpty){
+        Fimber.d("Widget exists in stack.");
+        Navigator.of(_currentContext).popUntil((route) => route.settings.name == _SECOND);
+      }else{
+        Fimber.d("Negative on existance");
+        Navigator.of(_currentContext).pushNamed(_SECOND);
+      }
+    }
   }
 
+  static const _HOME = '/';
+  static const _SECOND = 'second';
+
   Map<String, Widget Function(BuildContext)> routes = {
-    '/' : (context) => const ExampleWidget(title: Strings.title),
-    '/second' : (context) => const SecondWidget(),
+    _HOME: (context) => const ExampleWidget(title: "title"),
+    _SECOND: (context) => const SecondWidget(),
   };
 
 }
